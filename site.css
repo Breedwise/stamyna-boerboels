@@ -246,6 +246,12 @@ p{margin:0 0 18px}
 .breedban .creds span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:12px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.42),transparent)}
 @media(max-width:620px){.breedban .creds span:not(:last-child)::after{display:none}}
 
+/* --- application form: section headers + agreement --- */
+.formwrap .fsec{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-deep);margin:34px 0 16px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.formwrap .fsec:first-of-type{margin-top:2px}
+.formwrap .fcheck{display:flex;gap:11px;align-items:flex-start;margin:4px 0 24px;font-size:13.5px;color:var(--ink-2);line-height:1.5;cursor:pointer}
+.formwrap .fcheck input{margin-top:2px;width:16px;height:16px;flex:none;accent-color:var(--ink)}
+
 /* --- steps (process) --- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .step{text-align:center;padding:0 8px}
@@ -307,9 +313,9 @@ p{margin:0 0 18px}
 .lifegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .lifegrid figure{margin:0}
 .framed{border-radius:16px;overflow:hidden;box-shadow:0 24px 50px -36px rgba(0,0,0,.4)}
-.framed img{width:100%;display:block}
-.lifegrid .framed img{aspect-ratio:1/1;object-fit:cover;cursor:pointer;transition:transform .8s var(--ease)}
-.lifegrid .framed:hover img{transform:scale(1.05)}
+.framed img,.framed video{width:100%;display:block}
+.lifegrid .framed img,.lifegrid .framed video{aspect-ratio:1/1;object-fit:cover;cursor:pointer;transition:transform .8s var(--ease)}
+.lifegrid .framed:hover img,.lifegrid .framed:hover video{transform:scale(1.05)}
 @media(max-width:860px){.lifegrid{grid-template-columns:repeat(2,1fr);gap:12px}}
 
 /* --- trust strip --- */

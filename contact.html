@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=14">
+<link rel="stylesheet" href="site.css?v=19">
 </head>
 <body>
 
@@ -41,12 +41,14 @@
     </svg>
     <span class="eyebrow">Become a Stamyna Family</span>
     <h1>Let's see if <em>it's a fit</em></h1>
-    <p>Tell us a little about your home and what you're looking for. There are no wrong answers, this just helps us place the right dog with the right family.</p>
+    <p>A few questions about your home and what you're looking for. There are no wrong answers, it just helps us place the right dog with the right family.</p>
   </div></section>
 
   <section class="blk" style="padding-top:52px"><div class="wrap">
     <form id="inq" class="formwrap" novalidate>
       <input type="text" class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="fsec">About you</div>
       <div class="formrow">
         <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
@@ -55,6 +57,59 @@
         <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
         <div class="field"><label for="location">City / State</label><input id="location" name="location" type="text"></div>
       </div>
+      <div class="field"><label for="hear">How did you hear about us?</label>
+        <select id="hear" name="hear">
+          <option>Instagram / social media</option>
+          <option>Google / search</option>
+          <option>A friend or a past Stamyna family</option>
+          <option>A referral from another breeder</option>
+          <option>Other</option>
+        </select></div>
+
+      <div class="fsec">Your home</div>
+      <div class="formrow">
+        <div class="field"><label for="hometype">Your home</label>
+          <select id="hometype" name="hometype">
+            <option>House with a yard</option>
+            <option>House, limited yard</option>
+            <option>Farm / acreage</option>
+            <option>Townhouse</option>
+            <option>Apartment / condo</option>
+          </select></div>
+        <div class="field"><label for="yard">Outdoor space</label>
+          <select id="yard" name="yard">
+            <option>Securely fenced yard</option>
+            <option>Yard, not fully fenced</option>
+            <option>Acreage</option>
+            <option>Limited or shared outdoor space</option>
+          </select></div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label for="children">Children at home</label>
+          <select id="children" name="children">
+            <option>No children</option>
+            <option>Yes, older children or teens</option>
+            <option>Yes, young children</option>
+            <option>Grandchildren or visitors often</option>
+          </select></div>
+        <div class="field"><label for="pets">Other pets</label>
+          <select id="pets" name="pets">
+            <option>No other pets</option>
+            <option>Other dog or dogs</option>
+            <option>Cat or cats</option>
+            <option>Dogs and cats</option>
+            <option>Other animals or livestock</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="experience">Experience with the breed</label>
+        <select id="experience" name="experience">
+          <option>I own or have owned a Boerboel</option>
+          <option>I've owned other large or guardian breeds</option>
+          <option>I've owned dogs, but new to guardian breeds</option>
+          <option>This would be my first dog</option>
+        </select></div>
+
+      <div class="fsec">The dog you're looking for</div>
       <div class="formrow">
         <div class="field"><label for="interest">What are you looking for?</label>
           <select id="interest" name="interest">
@@ -71,9 +126,26 @@
             <option>Just exploring</option>
           </select></div>
       </div>
-      <div class="field"><label for="home">Tell us about your home</label>
-        <textarea id="home" name="home" placeholder="Your household, space and yard, experience with large or guardian breeds, other pets or children, and anything you'd like us to know."></textarea></div>
-      <div class="field" style="margin-bottom:26px"><label for="pref">Preferences (optional)</label><input id="pref" name="pref" type="text" placeholder="Sex, colour, timing, or a particular pairing"></div>
+      <div class="formrow">
+        <div class="field"><label for="sex">Sex preference</label>
+          <select id="sex" name="sex">
+            <option>No preference</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select></div>
+        <div class="field"><label for="role">Primarily for</label>
+          <select id="role" name="role">
+            <option>A family companion</option>
+            <option>A family guardian</option>
+            <option>Both, companion and guardian</option>
+          </select></div>
+      </div>
+
+      <div class="field"><label for="home">Tell us about your home and what you're looking for</label>
+        <textarea id="home" name="home" placeholder="Your household and daily life, your experience with large or guardian breeds, why a Boerboel, and anything you'd like us to know."></textarea></div>
+      <div class="field"><label for="pref">Anything else? (optional)</label><input id="pref" name="pref" type="text" placeholder="A particular pairing, colour, timing, or questions for us"></div>
+      <label class="fcheck"><input type="checkbox" id="agree" name="agree"><span>I understand Stamyna places by application, and that a deposit reserves a puppy once we are a match.</span></label>
+
       <button class="btn dark lg" type="submit" style="width:100%">Submit Application</button>
       <p class="formnote">We read every application personally and reply as soon as we can.</p>
     </form>
