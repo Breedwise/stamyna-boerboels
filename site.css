@@ -233,6 +233,19 @@ p{margin:0 0 18px}
 .band .cap p{color:rgba(255,255,255,.88);max-width:46ch;margin:16px 0 0;font-size:16.5px}
 @media(max-width:620px){.band .cap{padding:30px 26px}}
 
+/* --- breeding statement banner --- */
+.breedban{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.breedban .bb-rule{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(1120px,88%);height:1px;background:var(--silver);opacity:.5}
+.breedban .wrap{position:relative;z-index:2;text-align:center;padding:clamp(76px,11vw,132px) 0}
+.breedban .eyebrow{color:rgba(255,255,255,.6)}
+.breedban h2{font-family:var(--serif);font-weight:500;letter-spacing:-.025em;font-size:clamp(30px,5vw,56px);line-height:1.05;margin:14px auto 0;max-width:22ch}
+.breedban h2 em{font-style:italic;background:var(--silver);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.breedban p{color:rgba(255,255,255,.72);max-width:58ch;margin:22px auto 0;font-size:clamp(15px,1.5vw,17px);line-height:1.68}
+.breedban .creds{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin:40px auto 0}
+.breedban .creds span{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82);padding:4px clamp(14px,2.6vw,30px);position:relative}
+.breedban .creds span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:12px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.42),transparent)}
+@media(max-width:620px){.breedban .creds span:not(:last-child)::after{display:none}}
+
 /* --- steps (process) --- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .step{text-align:center;padding:0 8px}
