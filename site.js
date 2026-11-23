@@ -41,15 +41,27 @@
     lb.addEventListener('click',function(){lb.classList.remove('on');lbImg.src='';});
   }
 
-  // application form (front-end confirmation; wire to inbox/CRM before launch)
+  // application form -> Kennel OS CRM (each submission becomes a lead in the kennel's OS)
+  var KOS='https://jrfdufemonjhafqyacge.supabase.co/functions/v1/kennel-os-api?key=kos_pk_456d0c56ec4f4435a54c704e17caf55d';
   var form=document.getElementById('inq'), msg=document.getElementById('inqmsg');
   if(form&&msg){
+    var V=function(id){var el=document.getElementById(id);return el?(el.value||'').trim():'';};
+    var done=function(){form.style.display='none';msg.classList.add('on');msg.scrollIntoView({behavior:'smooth',block:'center'});};
     form.addEventListener('submit',function(e){
       e.preventDefault();
       if(form.website && form.website.value){return;} // honeypot
-      form.style.display='none';
-      msg.classList.add('on');
-      msg.scrollIntoView({behavior:'smooth',block:'center'});
+      var name=V('name'), email=V('email'), phone=V('phone');
+      var L=[['Location','location'],['How they heard','hear'],['Home','hometype'],['Outdoor space','yard'],['Children','children'],['Other pets','pets'],['Experience with the breed','experience'],['Looking for','interest'],['Timeline','timeline'],['Sex preference','sex'],['Primarily for','role']];
+      var parts=[];
+      L.forEach(function(p){var v=V(p[1]);if(v)parts.push(p[0]+': '+v);});
+      var home=V('home'); if(home)parts.push('About their home: '+home);
+      var pref=V('pref'); if(pref)parts.push('Anything else: '+pref);
+      var btn=form.querySelector('button[type="submit"]'); if(btn){btn.disabled=true;btn.textContent='Submitting…';}
+      fetch(KOS,{method:'POST',headers:{'content-type':'application/json'},keepalive:true,
+        body:JSON.stringify({name:name,email:email,phone:phone,message:parts.join('\n'),source:'Website application'})})
+        .then(function(r){return r.json().catch(function(){return{};});})
+        .then(function(){done();})
+        .catch(function(){done();});
     });
   }
 })();
