@@ -22,7 +22,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
   font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.01em}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.035em;line-height:1.04}
+h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.035em;line-height:1.04;text-wrap:balance}
 h1 em,h2 em,h3 em{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.02em}
 p{margin:0 0 18px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:2}
@@ -420,3 +420,10 @@ footer.ft .fine{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;c
 @media(max-width:640px){.lifeclips{grid-template-columns:1fr 1fr;gap:10px}}
 
 .hero-shot video{width:100%;height:auto;display:block}
+
+/* ── Mobile headline sizing: keep headlines to 2–3 well-spaced lines (no run-on stacking) ── */
+@media(max-width:600px){
+  .hero h1{font-size:clamp(27px,7.4vw,30px);line-height:1.08}
+  .phero h1{font-size:clamp(26px,7vw,29px);line-height:1.1}
+  .manifesto h2,.anno .hd h2,.shead h2,.pillars .hd h2,.dogs .hd h2,.fam-home .hd h2,.split .copy h2,.band .cap h2,.cta2 h2,.breedban h2{font-size:clamp(24px,5.6vw,28px);line-height:1.14}
+}
